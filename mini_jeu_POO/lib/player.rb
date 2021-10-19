@@ -1,4 +1,4 @@
-class player
+class Player
     attr_accessor :name, :life_point
 
     def initialize(name)
@@ -7,7 +7,7 @@ class player
     end
 
     def show_state
-        puts "#{name}" a "#{life_points}"
+        puts "#{name} a #{life_points}"
     end
     
     def gets_damage(damage_points)
