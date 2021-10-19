@@ -48,3 +48,55 @@ class Game
         end
 
     end
+
+    def menu_choice(string)
+        input = string
+        case input
+        when "a"
+            @human_player.search_weapon
+        when "s"
+            @human_player.search_health_pack
+        when "0"
+            @human_player.attacks(enemies[0])
+            if @enemies[0].life_points <= 0
+                kill_player(enemies[0])
+            end
+        when "1"
+            @human_player.attacks(@enemies[1])
+            if @enemies[0].life_points <= 0
+                kill_player(enemies[1])
+            end
+        when "2"
+            @human_player.attacks(enemies[2])
+            if @enemies[2].life_points <= 0
+            kill_player(@enemies[2])
+            end
+        when "2"
+            @human_player.attacks(enemies[3])
+            if @enemies[3].life_points <= 0
+            kill_player(@enemies[3])
+            end
+        else
+            puts "Mauvaise touche !! Passe ton tour."
+        end
+        gets.chomp
+    end
+
+    def enemies_attack
+        if is_still_ongoing? == true
+            enemies.each do |pnj|
+                pnj.attacks(@human_player)
+            end
+        end
+    end
+    
+    def end
+        puts "Fin du jeu ..."
+
+        if @human_player.life_points > 0 && @enemies.length ==0
+            puts "Tu as gagné ! clap clap"
+        else
+            puts "LOOOSEEER !!"
+        end
+    end
+end
