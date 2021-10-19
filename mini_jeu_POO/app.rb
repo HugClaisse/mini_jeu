@@ -31,3 +31,4 @@ end
 if player2.life_points <= 0
     puts player2.name + " est mort. Fin du combat !!"
 end
+end
