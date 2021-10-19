@@ -34,7 +34,7 @@ while user.life_points >0 && (player2.life_points > 0 || player1.life_points > 0
     end
 
     if player2.life_points > 0
-        puts "0 - José a #{player2.life_points} PV !!"
+        puts "1 - José a #{player2.life_points} PV !!"
     end
 
     menu = gets.chomp.to_s
